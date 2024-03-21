@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>fortnite</title>
-    <link rel="stylesheet" href="vragen.css" />
-    <script src="fortnitequiz.js" defer></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Quizzes</title>
+    <link rel="stylesheet" href="vragen.css">
+    <script src="script.js" defer></script>
 </head>
+
 <body>
+    <!--Header met nav-->
+
     <div class="video-container">
         <video autoplay muted loop>
-            <source src="../../img/vid/backround.mp4" type="video/mp4">
+            <source src="../img/vid/backround.mp4" type="video/mp4">
         </video>
     </div>
+
+
     <div class="content">
         <nav id="hamburger-nav">
-            <div class="logo"><a href="../../index.html"><img src="../../img/logo.png" alt="logo"></a></div>
+            <div class="logo"><a href="../index.html"><img src="../img/logo.png" alt="logo"></a></div>
             <div class="hamburger-menu">
                 <div class="hamburger-icon" onclick="toggleMenu()">
                     <span></span>
@@ -24,12 +30,12 @@
                     <span></span>
                 </div>
                 <div class="menu-links">
-                    <li><a href="../../index.html" onclick="toggleMenu()">Quizzes</a></li>
+                    <li><a href="quiz/index.html" onclick="toggleMenu()">Quizzes</a></li>
                     <li>
-                        <a href="../../Leaderboard/index.html" onclick="toggleMenu()">Leaderboard</a>
+                        <a href="Leaderboard/index.html" onclick="toggleMenu()">Leaderboard</a>
                     </li>
                     <li>
-                        <a href="../../" onclick="toggleMenu()">info maker</a>
+                        <a href="informatie_over_de_maker/" onclick="toggleMenu()">info maker</a>
                     </li>
                     <li>
                         <a href="informatie_over_de_gekozen_onderwerp/" onclick="toggleMenu()">info onderwerp</a>
@@ -38,6 +44,17 @@
                 </div>
             </div>
         </nav>
+        <!--/Header met nav-->
+
+        <div class="quiz-container">
+            <div id="question-container">
+              <h3 id="question">Question</h3>
+              <div id="answer-buttons"></div>
+            </div>
+            <button id="next-btn" class="btn hide">Next</button>
+            <div id="result" class="hide"></div>
+            <button id="restart-btn" class="btn hide">Restart</button>
+
         <div class="conf">
             <div class="footer">
                 <p> &#169; quzzie</p>

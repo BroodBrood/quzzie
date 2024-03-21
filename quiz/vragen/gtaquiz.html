@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=, initial-scale=1.0" />
     <title>Quizzes</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="vragen.css">
     <script src="script.js" defer></script>
 </head>
 
@@ -22,7 +22,7 @@
 
     <div class="content">
         <nav id="hamburger-nav">
-            <div class="logo"><img src="../img/logo.png" alt="logo" /></div>
+            <div class="logo"><a href="../index.html"><img src="../img/logo.png" alt="logo"></a></div>
             <div class="hamburger-menu">
                 <div class="hamburger-icon" onclick="toggleMenu()">
                     <span></span>
@@ -46,20 +46,22 @@
         </nav>
         <!--/Header met nav-->
 
+        <div class="quiz-container">
+            <div id="question-container">
+              <h3 id="question">Question</h3>
+              <div id="answer-buttons"></div>
+            </div>
+            <button id="next-btn" class="btn hide">Next</button>
+            <div id="result" class="hide"></div>
+            <button id="restart-btn" class="btn hide">Restart</button>
 
-
-        <!--main-->
-
-        <!--/main-->
-
-
-
-        <!--footer-->
-
-        <!--/footer-->
-
-        <!--background-->
-        <div class="area">
+        <div class="conf">
+            <div class="footer">
+                <p> &#169; quzzie</p>
+            </div>
+        </div>
+         <!--background-->
+         <div class="area">
             <ul class="circles">
                 <li></li>
                 <li></li>
@@ -75,5 +77,4 @@
         </div>
         <!--/background-->
 </body>
-
 </html>
