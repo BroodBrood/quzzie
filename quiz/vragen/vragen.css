@@ -145,6 +145,61 @@ a {
 .menu-links.open {
   transform: translateX(0);
 }
+
+/*Content*/
+/* Style for question container */
+#question-container {
+  margin-left: 15vw;
+  margin-right: 15vw;
+  height: 40vh;
+  position: relative;
+  top: 15vh;
+  background-color: #3d4042;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid 1px rgb(255, 3, 3);
+}
+
+/* Style for question text */
+#question {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  border: solid 1px white;
+  f
+}
+
+/* Style for answer buttons */
+#answer-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid 1px white;
+}
+
+.input-group {
+  margin-bottom: 10px;
+  border: solid 1px white;
+}
+
+/* Style for next button */
+#next-btn, #restart-btn {
+  margin-left: 100vh;
+  margin-top: 20vh;
+  
+}
+
+.hide {
+  display: none;
+}
+
+/* Style for result */
+#result {
+  font-size: 1.2em;
+  margin-top: 20px;
+}
+
+/*Content*/
 /*background*/
 .area {
   position: absolute;
