@@ -3,6 +3,7 @@
 * {
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
 body {
@@ -11,6 +12,7 @@ body {
   font-style: inherit;
   overflow: hidden;
   background-color: #974cf6;
+  scroll-behavior: smooth;
 }
 
 /*header*/
@@ -70,11 +72,17 @@ a {
 
 .logo img {
   width: 5rem;
+  transition: 0.4s ease-in-out;
 }
 
 .logo:hover {
   cursor: default;
 }
+
+.logo img:hover {
+  width: 6rem;
+}
+
 
 .hamburger-menu {
   position: relative;
@@ -111,11 +119,13 @@ a {
   max-height: 100%;
   overflow: hidden;
   transform: translateX(100%);
-  transition: transform 1s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
+
 .menu-links:hover {
   cursor: pointer;
 }
+
 .menu-links a {
   display: block;
   padding: 10px;
@@ -145,6 +155,7 @@ a {
 .menu-links.open {
   transform: translateX(0);
 }
+
 /*background*/
 .area {
   position: absolute;

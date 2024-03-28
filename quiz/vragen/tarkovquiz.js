@@ -177,13 +177,14 @@ function showQuestion(question) {
 
         const label = document.createElement("label");
         label.htmlFor = "answer" + index;
-        label.innerText = answer.text;
+        label.innerText = answer.text; // Update the text displayed on the button
 
         inputGroup.appendChild(radio);
         inputGroup.appendChild(label);
         answerButtons.appendChild(inputGroup);
     });
 }
+
 
 function resetState() {
     while (answerButtons.firstChild) {
@@ -194,19 +195,31 @@ function resetState() {
 nextButton.addEventListener("click", () => {
     const answerIndex = Array.from(answerButtons.querySelectorAll("input")).findIndex((radio) => radio.checked);
     if (answerIndex !== -1) {
-        if (shuffledQuestions[currentQuestionIndex].answers[answerIndex].correct) {
-            score++;
-        }
-        currentQuestionIndex++;
-        if (shuffledQuestions.length > currentQuestionIndex) {
-            setNextQuestion();
+        const selectedAnswer = shuffledQuestions[currentQuestionIndex].answers[answerIndex];
+        if (selectedAnswer.correct) {
+            score++; // Increment score only for correct answers
+            answerButtons.classList.add('correct-answer');
         } else {
-            endQuiz();
+            answerButtons.classList.add('incorrect-answer');
         }
+
+        // Delay the transition to allow the animation to play
+        setTimeout(() => {
+            answerButtons.classList.remove('correct-answer', 'incorrect-answer');
+            // Proceed to the next question or end the quiz
+            currentQuestionIndex++;
+            if (shuffledQuestions.length > currentQuestionIndex) {
+                setNextQuestion();
+            } else {
+                endQuiz();
+            }
+        }, 1000);
     } else {
         alert("Please select an answer.");
     }
 });
+
+
 
 restartButton.addEventListener("click", startQuiz);
 

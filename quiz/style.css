@@ -12,6 +12,7 @@ body {
   font-style: inherit;
   overflow: hidden;
   background-color: #974cf6;
+  scroll-behavior: smooth;
 }
 
 /*header*/
@@ -118,7 +119,7 @@ a {
   max-height: 100%;
   overflow: hidden;
   transform: translateX(100%);
-  transition: transform 0.1s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
 
 .menu-links:hover {
@@ -165,11 +166,10 @@ a {
   display: flex;
   justify-content: center;
   flex: 0.3;
-  /* Adjust the flex value to make the divs less wide */
   margin: 10px;
   overflow: hidden;
   margin-top: 4vw;
-  transition: transform 0.3s ease;
+  padding: 2vw;
 }
 
 .container img {
@@ -179,16 +179,13 @@ a {
   border-bottom: solid 70px #3d4042;
   border-bottom-right-radius: 7vh;
   border-bottom-left-radius: 7vh;
-
   width: 50%;
-  height: auto;
   display: block;
   margin: 0 auto;
-
-  /* Add transition for smooth effect */
+  transition: transform 0.3s ease;
 }
 
-.container div:hover {
+.container img:hover {
   transform: scale(1.05);
   margin-top: -0.03;
   /* Increase size on hover */
