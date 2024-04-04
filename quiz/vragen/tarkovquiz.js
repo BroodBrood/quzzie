@@ -200,21 +200,23 @@ nextButton.addEventListener("click", () => {
             answerButtons.classList.add('correct-answer');
         } else {
             answerButtons.classList.add('incorrect-answer');
-            setTimeout(() => {
-                answerButtons.classList.remove('correct-answer', 'incorrect-answer');
-                currentQuestionIndex++;
-                if (shuffledQuestions.length > currentQuestionIndex) {
-                    setNextQuestion();
-                } else {
-                    endQuiz();
-                }
-                resetTimer(); // Reset de timer als een vraag wordt overgeslagen
-            }, 1000);
         }
-             }         else {
+        
+        setTimeout(() => {
+            answerButtons.classList.remove('correct-answer', 'incorrect-answer');
+            currentQuestionIndex++;
+            if (shuffledQuestions.length > currentQuestionIndex) {
+                setNextQuestion();
+                resetTimer(); // Reset de timer voor de nieuwe vraag
+            } else {
+                endQuiz();
+            }
+        }, 1000);
+    } else {
         alert("Selecteer alstublieft een antwoord.");
     }
 });
+
 
 restartButton.addEventListener("click", startQuiz);
 

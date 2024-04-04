@@ -315,7 +315,6 @@ a {
     justify-content: space-around;
     background-color: #3d4042;
     padding: 20px;
-    border-radius: 10px; /* Afgeronde hoeken toevoegen aan de container */
     overflow: hidden; /* Verborgen overflow om afgeronde hoeken van de achtergrondbox te respecteren */
 }
 
