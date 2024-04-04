@@ -310,20 +310,27 @@ a {
     /* Center-align the content within the footer */
   }
 
-  .image-container {
+  .image-box {
+    background-color: #3d4042; /* Transparent background */
+    padding: 20px; /* Add padding around the images */
+    margin: 0 10px; /* Add margin between the images */
+    border-radius: 10px; /* Rounded corners for each box */
+    overflow: hidden; /* Hide overflowing content */
+    float: left; /* Make the divs float to align horizontally */
+}
+
+.image-box img {
+    max-width: 100%; /* Ensure image fits inside box */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove default inline spacing */
+    border-radius: 10px; /* Rounded corners for each image */
+}
+.main-container{
     display: flex;
-    justify-content: space-around;
-    background-color: #3d4042;
-    padding: 20px;
-    overflow: hidden; /* Verborgen overflow om afgeronde hoeken van de achtergrondbox te respecteren */
+    justify-content: center;
+    margin-top: 15vh;
 }
-
-.image-background {
-    flex: 1; /* Laat de achtergrondbox de resterende ruimte in de container innemen */
-    background-color: rgba(255, 255, 255, 0.5); /* Achtergrondkleur met transparantie */
-}
-
-.image-container img {
-    max-width: 100%;
-    height: auto;
+p{
+    color: white;
+    text-align: center;
 }

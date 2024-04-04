@@ -160,7 +160,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: solid 1px rgb(255, 3, 3);
+  border-radius: 5px;
 }
 
 /* Style for question text */
@@ -189,14 +189,17 @@ a {
 
 .input-group label {
   display: inline-block;
-  padding: 15px 30px; /* Increased padding for bigger buttons */
+  padding: 15px 30px;
+  /* Increased padding for bigger buttons */
   background-color: #5c5c5c;
   color: white;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
-  width: 100%; /* Ensure all buttons have the same width */
-  text-align: center; /* Center align the text within the buttons */
+  width: 100%;
+  /* Ensure all buttons have the same width */
+  text-align: center;
+  /* Center align the text within the buttons */
 }
 
 .input-group label:hover {
@@ -216,7 +219,7 @@ a {
 /* Style for next button */
 #next-btn {
   display: inline-block;
-  padding: 15px 30px; 
+  padding: 15px 30px;
   background-color: #5c5c5c;
   color: white;
   border-radius: 5px;
@@ -225,14 +228,31 @@ a {
   width: 25%;
   text-align: center;
 }
+
 #next-btn:hover {
   background-color: #757575;
 }
-#next-btn,
-#restart-btn {
-  margin-left: 80vh;
-  margin-top: 17vh;
 
+#restart-btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #5c5c5c;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 25%;
+  text-align: center;
+}
+
+#next-btn {
+  margin-left: 78.5vh;
+  margin-top: 17vh;
+}
+
+#restart-btn{
+  margin-left: 77vh;
+  margin-top: 29vh;
 }
 
 .hide {
@@ -241,20 +261,45 @@ a {
 
 /* Style for result */
 #result {
-  font-size: 1.2em;
+  font-size: 1.5em;
   margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: relative;
+  top: 13vw;
 }
+
 /*Antwoord correct of niet correct*/
 @keyframes correctAnswerAnimation {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); background-color: green; }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+    background-color: green;
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 @keyframes incorrectAnswerAnimation {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); background-color: red; }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+    background-color: red;
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 .correct-answer label {
@@ -265,9 +310,10 @@ a {
   animation: incorrectAnswerAnimation 1s;
 }
 
-#timer-label{
+#timer-label {
   color: white;
 }
+
 #timer {
   color: white;
 }
@@ -408,4 +454,21 @@ a {
     border-bottom-left-radius: 4vh;
   }
 
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5vh;
+}
+
+.footer {
+  color: rgba(240, 248, 255, 0.27);
+  position: absolute;
+  bottom: 30px;
+  /* Stick the footer at the bottom */
+  width: 100%;
+  /* Ensure the footer spans the entire width */
+  text-align: center;
+  /* Center-align the content within the footer */
 }

@@ -56,7 +56,7 @@ const questions = [
     {
         question: "Wat is de belangrijkste modus van Escape from Tarkov?",
         answers: [
-            { text: "Singleplayer", correct: false },
+            { text: "我吃你", correct: false },
             { text: "Co-op", correct: false },
             { text: "Online multiplayer", correct: true },
             { text: "Versus", correct: false }
@@ -222,9 +222,9 @@ restartButton.addEventListener("click", startQuiz);
 
 function endQuiz() {
     questionContainer.style.display = "none";
-    nextButton.classList.add("hide");
-    restartButton.classList.remove("hide");
-    resultDiv.classList.remove("hide");
+    nextButton.classList.add("hide"); // Hide the "Next" button
+    restartButton.classList.add("hide"); // Hide the "Restart" button
+    resultDiv.classList.add("hide"); // Hide the end score
     resultDiv.innerText = `Je eindscore: ${score} / ${shuffledQuestions.length}`;
 }
 

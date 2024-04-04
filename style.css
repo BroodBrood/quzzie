@@ -292,3 +292,19 @@ a {
   }
 
 }
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5vh;
+}
+
+.footer {
+  color: rgba(240, 248, 255, 0.27);
+  position: absolute;
+  bottom: -38vw;
+  /* Stick the footer at the bottom */
+  width: 100%;
+  /* Ensure the footer spans the entire width */
+  text-align: center;
+  /* Center-align the content within the footer */
+}

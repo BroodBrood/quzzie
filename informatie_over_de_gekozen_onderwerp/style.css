@@ -294,16 +294,17 @@ a {
 }
 
 
-/*main*/ 
-.container {
-  width: 80%; /* Verander dit naar de gewenste breedte */
+/*main*/
+.tcontainer {
+  width: 80%; 
   margin: 0 auto;
-  border: 1px solid #ccc;
   padding: 20px;
   text-align: center;
   margin-top: 15vh;
   background-color: #3d4042;
   border-radius: 3vh;
+  padding: 3vh;
+  padding-bottom: 5vh;
 }
 .heading {
   font-size: 24px;
