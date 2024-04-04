@@ -164,7 +164,7 @@ function setNextQuestion() {
 }
 
 function showQuestion(question) {
-    questionElement.innerText = question.question;
+    questionElement.innerText = `Vraag ${currentQuestionIndex + 1}: ${question.question}`;
     question.answers.forEach((answer, index) => {
         const inputGroup = document.createElement("div");
         inputGroup.classList.add("input-group");
@@ -177,14 +177,13 @@ function showQuestion(question) {
 
         const label = document.createElement("label");
         label.htmlFor = "answer" + index;
-        label.innerText = answer.text; // Update the text displayed on the button
+        label.innerText = answer.text;
 
         inputGroup.appendChild(radio);
         inputGroup.appendChild(label);
         answerButtons.appendChild(inputGroup);
     });
 }
-
 
 function resetState() {
     while (answerButtons.firstChild) {
@@ -197,29 +196,25 @@ nextButton.addEventListener("click", () => {
     if (answerIndex !== -1) {
         const selectedAnswer = shuffledQuestions[currentQuestionIndex].answers[answerIndex];
         if (selectedAnswer.correct) {
-            score++; // Increment score only for correct answers
+            score++;
             answerButtons.classList.add('correct-answer');
         } else {
             answerButtons.classList.add('incorrect-answer');
+            setTimeout(() => {
+                answerButtons.classList.remove('correct-answer', 'incorrect-answer');
+                currentQuestionIndex++;
+                if (shuffledQuestions.length > currentQuestionIndex) {
+                    setNextQuestion();
+                } else {
+                    endQuiz();
+                }
+                resetTimer(); // Reset de timer als een vraag wordt overgeslagen
+            }, 1000);
         }
-
-        // Delay the transition to allow the animation to play
-        setTimeout(() => {
-            answerButtons.classList.remove('correct-answer', 'incorrect-answer');
-            // Proceed to the next question or end the quiz
-            currentQuestionIndex++;
-            if (shuffledQuestions.length > currentQuestionIndex) {
-                setNextQuestion();
-            } else {
-                endQuiz();
-            }
-        }, 1000);
-    } else {
-        alert("Please select an answer.");
+             }         else {
+        alert("Selecteer alstublieft een antwoord.");
     }
 });
-
-
 
 restartButton.addEventListener("click", startQuiz);
 
@@ -228,5 +223,55 @@ function endQuiz() {
     nextButton.classList.add("hide");
     restartButton.classList.remove("hide");
     resultDiv.classList.remove("hide");
-    resultDiv.innerText = `Your final score: ${score} / ${shuffledQuestions.length}`;
+    resultDiv.innerText = `Je eindscore: ${score} / ${shuffledQuestions.length}`;
 }
+
+// Timer element
+let timerElement = document.getElementById('timer'); // Dit moet worden vervangen door de ID van het element waarin de timer wordt weergegeven
+let interval; // Variabele om het interval bij te houden
+let duration = 30; // Standaardduur van de timer
+
+// Functie om de timer te resetten
+function resetTimer() {
+    clearInterval(interval); // Stop de timer als deze al loopt
+    startTimer(); // Start de timer opnieuw
+}
+
+// Functie om een vraag over te slaan en de timer te resetten
+function skipQuestion() {
+    clearInterval(interval); // Stop de timer
+    currentQuestionIndex++; // Ga naar de volgende vraag
+    if (shuffledQuestions.length > currentQuestionIndex) {
+        setNextQuestion(); // Toon de volgende vraag
+        resetTimer(); // Reset de timer voor de nieuwe vraag
+    } else {
+        endQuiz(); // Einde van de quiz
+    }
+}
+
+function startTimer() {
+    let timer = duration;
+    let minutes, seconds;
+
+    interval = setInterval(updateTimer, 1000); // Start de timer
+
+    function updateTimer() {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        timerElement.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            clearInterval(interval); // Stop de timer
+            skipQuestion(); // Ga naar de volgende vraag
+        }
+    }
+}
+
+// Start de timer wanneer de pagina geladen is
+window.onload = function () {
+    startTimer();
+};
