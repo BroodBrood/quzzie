@@ -6,78 +6,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=, initial-scale=1.0" />
     <title>Quizzes</title>
+    <script src="https://unpkg.com/swup@4">defer</script>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
+    <script src="fade.js"> defer</script>
+    <link href="fade.css" rel="stylesheet"/>
 </head>
 
 <body>
-    <!--Header met nav-->
+    <main id="swup" class="transition-fade">
+    <!--/Header met nav-->
 
-    <div class="video-container">
-        <video autoplay muted loop>
-            <source src="../img/vid/backround.mp4" type="video/mp4">
-        </video>
+
+
+    <!--main-->
+    <div class="main">
+        <a href="quiz/index.html" id="logoLink"><img src="img/wit-logo.png " alt="" id="logoImg"></a>
     </div>
 
 
-    <div class="content">
-        <nav id="hamburger-nav">
-            <div class="logo"><img src="../img/logo.png" alt="logo" /></div>
-            <div class="hamburger-menu">
-                <div class="hamburger-icon" onclick="toggleMenu()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <div class="menu-links">
-                    <li><a href="quiz/index.html" onclick="toggleMenu()">Quizzes</a></li>
-                    <li>
-                        <a href="Leaderboard/index.html" onclick="toggleMenu()">Leaderboard</a>
-                    </li>
-                    <li>
-                        <a href="informatie_over_de_maker/" onclick="toggleMenu()">info maker</a>
-                    </li>
-                    <li>
-                        <a href="informatie_over_de_gekozen_onderwerp/index.html" onclick="toggleMenu()">info onderwerp</a>
-                    </li>
-                    <li></li>
-                </div>
-            </div>
-        </nav>
-        <!--/Header met nav-->
 
-
-
-        <!--main-->
-
-        <!--/main-->
-
-
-
-        <!--footer-->
-        <div class="conf">
-            <div class="footer">
-                <p> &#169; quzzie</p>
-            </div>
+    <!--footer-->
+    <div class="conf">
+        <div class="footer">
+            <p> &#169; quzzie</p>
         </div>
-        <!--/footer-->
+    </div>
+    <!--/footer-->
 
-        <!--background-->
-        <div class="area">
-            <ul class="circles">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-        </div>
-        <!--/background-->
+</main>
 </body>
 
 </html>

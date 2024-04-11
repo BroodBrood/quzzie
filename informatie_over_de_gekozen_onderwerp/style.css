@@ -66,8 +66,8 @@ a {
 }
 
 .logo {
-  position: relative;
-  right: 25rem;
+  position: absolute;
+  right: 93%;
 }
 
 .logo img {
@@ -85,9 +85,9 @@ a {
 
 
 .hamburger-menu {
-  position: relative;
+  position: absolute;
   display: inline-block;
-  left: 37vh;
+  left: 95%;
 }
 
 .hamburger-icon {

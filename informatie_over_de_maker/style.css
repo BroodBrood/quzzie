@@ -66,8 +66,8 @@ a {
 }
 
 .logo {
-  position: relative;
-  right: 25rem;
+  position: absolute;
+  right: 93%;
 }
 
 .logo img {
@@ -85,9 +85,9 @@ a {
 
 
 .hamburger-menu {
-  position: relative;
+  position: absolute;
   display: inline-block;
-  left: 37vh;
+  left: 95%;
 }
 
 .hamburger-icon {
@@ -299,16 +299,7 @@ a {
     margin-top: 5vh;
   }
   
-  .footer {
-    color: rgba(240, 248, 255, 0.27);
-    position: absolute;
-    bottom: 30;
-    /* Stick the footer at the bottom */
-    width: 100%;
-    /* Ensure the footer spans the entire width */
-    text-align: center;
-    /* Center-align the content within the footer */
-  }
+  
 
   .image-box {
     background-color: #3d4042; /* Transparent background */
@@ -330,7 +321,19 @@ a {
     justify-content: center;
     margin-top: 15vh;
 }
-p{
-    color: white;
-    text-align: center;
+
+
+.footer {
+  color: rgba(240, 248, 255, 0.27);
+  position: absolute;
+  bottom: 30;
+  /* Stick the footer at the bottom */
+  width: 100%;
+  /* Ensure the footer spans the entire width */
+  text-align: center;
+  /* Center-align the content within the footer */
+}
+.ons {
+  color: white;
+  text-align: center;
 }

@@ -222,11 +222,14 @@ restartButton.addEventListener("click", startQuiz);
 
 function endQuiz() {
     questionContainer.style.display = "none";
-    nextButton.classList.add("hide"); // Hide the "Next" button
-    restartButton.classList.add("hide"); // Hide the "Restart" button
-    resultDiv.classList.add("hide"); // Hide the end score
-    resultDiv.innerText = `Je eindscore: ${score} / ${shuffledQuestions.length}`;
+    nextButton.classList.add("hide"); 
+    restartButton.classList.add("hide"); 
+    resultDiv.classList.add("hide"); 
+    const totalPoints = 500 * shuffledQuestions.length;
+    const obtainedPoints = score * 500;
+    saveScores(totalPoints, obtainedPoints); // Save scores
 }
+
 
 // Timer element
 let timerElement = document.getElementById('timer'); // Dit moet worden vervangen door de ID van het element waarin de timer wordt weergegeven
@@ -272,6 +275,44 @@ function startTimer() {
         }
     }
 }
+
+function setNextQuestion() {
+    resetState();
+    showQuestion(shuffledQuestions[currentQuestionIndex]);
+    updatePoints(); // Update points display
+}
+
+function updatePoints() {
+    const totalPoints = 500 * shuffledQuestions.length;
+    const obtainedPoints = score * 500;
+    document.getElementById("total-points").innerText = `Total Points: ${totalPoints}`;
+    document.getElementById("obtained-points").innerText = `Obtained Points: ${obtainedPoints}`;
+}
+
+function saveScores(totalPoints, obtainedPoints) {
+    // Create a new XMLHttpRequest object
+    const xhttp = new XMLHttpRequest();
+
+    // Define the request type, URL, and whether the request should be asynchronous
+    xhttp.open("POST", "save-scores.php", true);
+
+    // Set the request header
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    // Define the parameters to be sent with the request
+    const params = `totalPoints=${totalPoints}&obtainedPoints=${obtainedPoints}`;
+
+    // Send the request with the parameters
+    xhttp.send(params);
+
+    // Handle the response from the server (if needed)
+    xhttp.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200) {
+            console.log(this.responseText); // Log the response from the server
+        }
+    };
+}
+
 
 // Start de timer wanneer de pagina geladen is
 window.onload = function () {
