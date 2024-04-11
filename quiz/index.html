@@ -8,9 +8,14 @@
     <title>Quizzes</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
+    <script src="https://unpkg.com/swup@4">defer </script>
+    <script src="../fade.js"> defer</script>
+    <link href="../fade.css" rel="stylesheet"/>
+    
 </head>
 
 <body>
+    <main id="swup" class="transition-fade">
     <!--Header met nav-->
 
     <div class="video-container">
@@ -32,13 +37,13 @@
                 <div class="menu-links">
                     <li><a href="#" onclick="toggleMenu()">Quizzes</a></li>
                     <li>
-                        <a href="Leaderboard/index.html" onclick="toggleMenu()">Leaderboard</a>
+                        <a href="../Leaderboard/index.html" onclick="toggleMenu()">Leaderboard</a>
                     </li>
                     <li>
-                        <a href="informatie_over_de_maker/" onclick="toggleMenu()">info maker</a>
+                        <a href="../informatie_over_de_maker/index.html" onclick="toggleMenu()">info maker</a>
                     </li>
                     <li>
-                        <a href="informatie_over_de_gekozen_onderwerp/" onclick="toggleMenu()">info onderwerp</a>
+                        <a href="../informatie_over_de_gekozen_onderwerp/index.html" onclick="toggleMenu()">info onderwerp</a>
                     </li>
                     <li></li>
                 </div>
@@ -65,8 +70,6 @@
         <!--/main-->
 
         <!--footer-->
-
-
         <div class="conf">
             <div class="footer">
                 <p> &#169; quzzie</p>
@@ -89,6 +92,7 @@
             </ul>
         </div>
         <!--/background-->
+    </main>
 </body>
 
 </html>
