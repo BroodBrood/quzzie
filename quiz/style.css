@@ -16,7 +16,7 @@ body {
   font-weight: 600;
   font-style: inherit;
   overflow: hidden;
-  background-color: #974cf6;
+  background-color: #8c43f5;
   scroll-behavior: smooth;
 }
 
@@ -180,7 +180,7 @@ a {
 
 .container img {
   border-radius: 0.5vh;
-  width: 70%;
+  width: 60%;
   display: block;
   margin: 0 auto;
   transition: transform 0.3s ease;

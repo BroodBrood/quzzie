@@ -10,7 +10,7 @@ body {
   font-weight: 600;
   font-style: inherit;
   overflow: hidden;
-  background-color: #974cf6;
+  background-color: #8c43f5;
 }
 
 /*header*/
@@ -225,9 +225,12 @@ a {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
-  width: 25%;
+  width: 35%;
   text-align: center;
-  margin-top: 17vh;
+  position: absolute;
+  left: 24%;
+  transform: translate(24%);
+  bottom: 20%;
 }
 .midden {
   display: flex;
@@ -246,9 +249,12 @@ a {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
-  width: 25%;
+  width: 35%;
   text-align: center;
-  margin-top: 2vh;
+  position: absolute;
+  left: 24%;
+  transform: translate(24%);
+  bottom: 13%;
 }
 
 .midden1 {
